@@ -73,6 +73,7 @@ body {
   text-transform: uppercase;
   /*when you animate something you hide the back part so you don't see the shaking and smooths things out*/
   backface-visibility: hidden;
+  margin-bottom: 60px;
 }
 
 .heading-primary-main {
@@ -148,4 +149,39 @@ body {
   /* the top/left will position the element according to its parent
   the transform:translate will position the element based on its own shape */
   transform: translate(-50%, -50%);
+  /* Since this anchor tag is also an inline element we can treat it as text
+  so to center text all we need is text-align: center */
+  text-align: center;
+}
+
+.btn:link,
+.btn:visited {
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 100px;
+  /* 'all' transitions will be finished being animated within .2 seconds */
+  transition: all 0.2s;
+
+  /* currently this button is only an anchor tag, which is an inline element
+  we want to add margin/padding to top/bottom of button
+  so change the display to inline-block to get the box model marg/pad
+  */
+  display: inline-block;
+  padding: 15px 40px;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  /* box shadow arguments are X Y blur color */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.btn:active {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+.btn-white {
+  background-color: #fff;
+  color: #777;
 }
