@@ -168,6 +168,9 @@ body {
   */
   display: inline-block;
   padding: 15px 40px;
+
+  /* set the position property to relative to get the psuedo element behind the button */
+  position: relative;
 }
 
 .btn:hover {
@@ -184,4 +187,50 @@ body {
 .btn-white {
   background-color: #fff;
   color: #777;
+}
+
+/* styling with psuedo elements */
+.btn::after {
+  content: "";
+  /* model the psuedo element after the button */
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  border-radius: 100px;
+  /* get the psuedo element behind the button */
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+
+  transition: all 0.4s;
+}
+
+.btn-white::after {
+  background-color: #fff;
+}
+
+.btn:hover::after {
+  /* scale(), scaleX(), scaleY() will double the size of the element */
+  transform: scaleX(1.4) scaleY(1.6);
+  opacity: 0;
+}
+
+.btn-animated {
+  /* short hand = animation-name, duration, timing-function, delay  */
+  animation: moveInButton 0.5s ease-out 0.75s;
+  /* these keyframes will be applied in reverse order before the animation starts */
+  animation-fill-mode: backwards;
+}
+
+@keyframes moveInButton {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
 }
