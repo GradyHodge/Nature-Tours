@@ -7,26 +7,41 @@ Dark green: #28b485
 
 */
 
-* {
+*,
+*::after,
+*::before {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  box-sizing: inherit;
 }
-/* everything related to font goes into body selector, 
+/*
+everything related to font goes into body selector, 
 but margin and padding cant be inherited here, 
 that goes in the universal selector above 
 */
+
+html {
+  font-size: 62.5%;
+  /*   SET ROOT FONT-SIZE 
+  Setting font-size in html will help you to easily calculate and update all CSS
+  properties as your site responds to media queries. With this one html declaration
+  you can change all of your CSS for each media query 
+  NOTE- if you rem or em here you will break users ability to magnify their screen
+  but you can use percentages to calculate 10px from the inherited 16px */
+}
 
 body {
   /* font details in body is a case of inheritence, 
      whereas the padding attribute of the body is not inheritence. */
   font-family: "Lato", sans-serif;
   font-weight: 400;
-  font-size: 16px;
+  /* font-size: 16px; */
   line-height: 1.7;
   color: #777;
   /* padding on the body puts a nice frame around the entire web page-break-inside */
-  padding: 30px;
+  padding: 3rem; /* EASY TO CALCULATE ROOT FONT SIZE WHEN SET TO 10px in HTML selector above*/
+
+  box-sizing: border-box;
 }
 
 .header {
@@ -41,12 +56,13 @@ body {
     ),
     url("../img/hero.jpg");
   background-size: cover;
-  /* bg-position:top anchors the top of the image to always stay glued to top of window */
+  /* bg-position:top anchors the top of the bg-image to always stay glued to top of window */
   background-position: top;
+  /*Set this parent div as relative position so the child div can set an absolute position that will hold its specific position within the parent container*/
   position: relative;
 
   /*this is how you can change the shape of your image frame using clip-path to define coordinate points.
-    starting top-left, top-right, bottom-right, bottom-left
+    starting clockwise from top-left, top-right, bottom-right, bottom-left
   clip-path: polygon(x y, x y, x y, x y) coordinates are in relation to top left corner left -> right top -> bottom*/
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
 }
@@ -56,12 +72,12 @@ body {
      set this div to absolute so it stays where you want it within its parent.
   */
   position: absolute;
-  top: 40px;
-  left: 40px;
+  top: 4rem;
+  left: 4rem;
 }
 
 .logo {
-  height: 35px;
+  height: 3.5rem; /*  3.5rem == 35px  root f-size = 10  */
 }
 
 .logo:hover {
@@ -73,16 +89,16 @@ body {
   text-transform: uppercase;
   /*when you animate something you hide the back part so you don't see the shaking and smooths things out*/
   backface-visibility: hidden;
-  margin-bottom: 60px;
+  margin-bottom: 6rem;
 }
 
 .heading-primary-main {
   /* get the h1 spans to stack on top of one another, but span is an inline element
   you need to change it to a block element so it will stack */
   display: block;
-  font-size: 60px;
+  font-size: 6rem;
   font-weight: 400;
-  letter-spacing: 35px;
+  letter-spacing: 3.5rem;
 
   animation-name: moveInLeft;
   animation-duration: 2s;
@@ -95,9 +111,9 @@ body {
   /* get the h1 spans to stack on top of one another, but span is an inline element
   you need to change it to a block element so it will stack */
   display: block;
-  font-size: 20px;
+  font-size: 2rem;
   font-weight: 700;
-  letter-spacing: 17px;
+  letter-spacing: 1.75rem;
   /*animation short hand all in one line*/
   animation: moveInRight 3s ease-out;
   animation: transform rotate(180deg);
@@ -110,10 +126,10 @@ body {
 @keyframes moveInLeft {
   0% {
     opacity: 0;
-    transform: translateX(-100px);
+    transform: translateX(-1rem);
   }
   80% {
-    transform: translateX(20px);
+    transform: translateX(2rem);
   }
   100% {
     opacity: 1;
@@ -124,7 +140,7 @@ body {
 @keyframes moveInRight {
   0% {
     opacity: 0;
-    transform: translateX(100px) rotate(-50deg);
+    transform: translateX(1rem) rotate(-50deg);
   }
 
   60% {
@@ -132,7 +148,7 @@ body {
   }
 
   80% {
-    transform: translateX(-20px);
+    transform: translateX(-2rem);
   }
   100% {
     opacity: 1;
@@ -158,7 +174,7 @@ body {
 .btn:visited {
   text-transform: uppercase;
   text-decoration: none;
-  border-radius: 100px;
+  border-radius: 10rem;
   /* 'all' transitions will be finished being animated within .2 seconds */
   transition: all 0.2s;
 
@@ -167,21 +183,21 @@ body {
   so change the display to inline-block to get the box model marg/pad
   */
   display: inline-block;
-  padding: 15px 40px;
+  padding: 1.5rem 4rem;
 
   /* set the position property to relative to get the psuedo element behind the button */
   position: relative;
 }
 
 .btn:hover {
-  transform: translateY(-3px);
+  transform: translateY(-3rem);
   /* box shadow arguments are X Y blur color */
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 1px 2rem rgba(0, 0, 0, 0.2);
 }
 
 .btn:active {
   transform: translateY(-1px);
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
 }
 
 .btn-white {
@@ -196,7 +212,7 @@ body {
   display: inline-block;
   height: 100%;
   width: 100%;
-  border-radius: 100px;
+  border-radius: 1rem;
   /* get the psuedo element behind the button */
   position: absolute;
   top: 0;
@@ -226,7 +242,7 @@ body {
 @keyframes moveInButton {
   0% {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(3rem);
   }
 
   100% {
