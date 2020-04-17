@@ -1,0 +1,26 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; /* best practice: put border-box in body so it gets inherited*/
+}
+/*
+everything related to font goes into body selector, 
+but margin and padding cant be inherited here, 
+that goes in the universal selector above 
+*/
+
+html {
+  font-size: 62.5%;
+  /*   SET ROOT FONT-SIZE 
+  Setting font-size in html will help you to easily calculate and update all CSS
+  properties as your site responds to media queries. With this one html declaration
+  you can change all of your CSS for each media query 
+  NOTE- if you rem or em here you will break users ability to magnify their screen
+  but you can use percentages to calculate 10px from the inherited 16px */
+}
+
+body {
+  box-sizing: border-box;
+}
