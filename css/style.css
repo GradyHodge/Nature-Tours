@@ -12,7 +12,7 @@ Dark green: #28b485
 *::before {
   margin: 0;
   padding: 0;
-  box-sizing: inherit;
+  box-sizing: inherit; /* best practice: put border-box in body so it gets inherited*/
 }
 /*
 everything related to font goes into body selector, 
@@ -67,7 +67,7 @@ body {
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
 }
 
-.logo-box {
+.header__logo-box {
   /* set the logo in a box so you can make it stay in the same place within its parent container 
      set this div to absolute so it stays where you want it within its parent.
   */
@@ -76,11 +76,18 @@ body {
   left: 4rem;
 }
 
-.logo {
+.header__logo {
   height: 3.5rem; /*  3.5rem == 35px  root f-size = 10  */
 }
 
-.logo:hover {
+.header__text-box {
+  position: absolute:
+  top: 40%;
+  left: 50%;
+  trasnsform: translate(-50%, -50%);
+}
+
+.header__logo:hover {
   animation: moveInRight 3s ease-out;
 }
 
@@ -92,7 +99,7 @@ body {
   margin-bottom: 6rem;
 }
 
-.heading-primary-main {
+.heading-primary--main {
   /* get the h1 spans to stack on top of one another, but span is an inline element
   you need to change it to a block element so it will stack */
   display: block;
@@ -107,7 +114,7 @@ body {
   animation-iteration-count: 3; */
 }
 
-.heading-primary-sub {
+.heading-primary--sub {
   /* get the h1 spans to stack on top of one another, but span is an inline element
   you need to change it to a block element so it will stack */
   display: block;
@@ -156,7 +163,7 @@ body {
   }
 }
 
-.text-box {
+.header__text-box {
   /* the parent div position will make its children "relative" within it
   the .text-box position is set to absolute so it doesn't change from the position inside its parent */
   position: absolute;
@@ -200,7 +207,7 @@ body {
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
 }
 
-.btn-white {
+.btn--white {
   background-color: #fff;
   color: #777;
 }
@@ -222,7 +229,7 @@ body {
   transition: all 0.4s;
 }
 
-.btn-white::after {
+.btn--white::after {
   background-color: #fff;
 }
 
@@ -232,7 +239,7 @@ body {
   opacity: 0;
 }
 
-.btn-animated {
+.btn--animated {
   /* short hand = animation-name, duration, timing-function, delay  */
   animation: moveInButton 0.5s ease-out 0.75s;
   /* these keyframes will be applied in reverse order before the animation starts */
@@ -247,6 +254,6 @@ body {
 
   100% {
     opacity: 1;
-    transform: translate(0);
+    transform: translateY(0);
   }
 }

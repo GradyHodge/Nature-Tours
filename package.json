@@ -1,0 +1,26 @@
+{
+  "name": "nature-tour",
+  "version": "1.0.0",
+  "description": "Landing Page for Nature Tour Outfitters website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GradyHodge/nature-tours.git"
+  },
+  "keywords": [
+    "services",
+    "website"
+  ],
+  "author": "Grady Hodge",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GradyHodge/nature-tours/issues"
+  },
+  "homepage": "https://github.com/GradyHodge/nature-tours#readme",
+  "devDependencies": {
+    "node-sass": "^4.13.1"
+  }
+}
