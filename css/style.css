@@ -52,6 +52,9 @@ html {
   but you can use percentages to calculate 10px from the inherited 16px */ }
 
 body {
+  box-sizing: border-box; }
+
+body {
   /* font details in body is a case of inheritence, 
      whereas the padding attribute of the body is not inheritence. */
   font-family: "Lato", sans-serif;
@@ -61,48 +64,7 @@ body {
   color: #777;
   /* padding on the body puts a nice frame around the entire web page-break-inside */
   padding: 3rem;
-  /* EASY TO CALCULATE ROOT FONT SIZE WHEN SET TO 10px in HTML selector above*/
-  box-sizing: border-box; }
-
-.header {
-  height: 95vh;
-  /*****************    MASK OVER BACKGROUND IMAGE    **********************************************
-  to use a mask over the top of the image we add a second image to the bg-image attribute using a comma
-  ************************************************************************************************/
-  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.748), rgba(40, 180, 133, 0.714)), url("../img/hero.jpg");
-  background-size: cover;
-  /* bg-position:top anchors the top of the bg-image to always stay glued to top of window */
-  background-position: top;
-  /*Set this parent div as relative position so the child div can set an absolute position that will hold its specific position within the parent container*/
-  position: relative;
-  /*this is how you can change the shape of your image frame using clip-path to define coordinate points.
-    starting clockwise from top-left, top-right, bottom-right, bottom-left
-  clip-path: polygon(x y, x y, x y, x y) coordinates are in relation to top left corner left -> right top -> bottom*/
-  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%); }
-  .header__logo-box {
-    /* set the logo in a box so you can make it stay in the same place within its parent container 
-       set this div to absolute so it stays where you want it within its parent.
-    */
-    position: absolute;
-    top: 4rem;
-    left: 4rem; }
-  .header__logo {
-    height: 3.5rem;
-    /*  3.5rem == 35px  root f-size = 10  */ }
-  .header__text-box {
-    /* the parent div position will make its children "relative" within it
-    the .text-box position is set to absolute so it doesn't change from the position inside its parent */
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    /* the top/left will position the element according to its parent
-    the transform:translate will position the element based on its own shape */
-    transform: translate(-50%, -50%);
-    /* Since this anchor tag is also an inline element we can treat it as text
-    so to center text all we need is text-align: center */
-    text-align: center; }
-  .header__logo:hover {
-    animation: moveInRight 3s ease-out; }
+  /* EASY TO CALCULATE ROOT FONT SIZE WHEN SET TO 10px in HTML selector above*/ }
 
 .heading-primary {
   color: #fff;
@@ -186,3 +148,48 @@ body {
     animation: moveInButton 0.5s ease-out 0.75s;
     /* these keyframes will be applied in reverse order before the animation starts */
     animation-fill-mode: backwards; }
+
+.row {
+  max-width: 114rem;
+  background-color: red;
+  margin: 0 auto; }
+
+.header {
+  height: 95vh;
+  /*****************    MASK OVER BACKGROUND IMAGE    **********************************************
+  to use a mask over the top of the image we add a second image to the bg-image attribute using a comma
+  ************************************************************************************************/
+  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.748), rgba(40, 180, 133, 0.714)), url("../img/hero.jpg");
+  background-size: cover;
+  /* bg-position:top anchors the top of the bg-image to always stay glued to top of window */
+  background-position: top;
+  /*Set this parent div as relative position so the child div can set an absolute position that will hold its specific position within the parent container*/
+  position: relative;
+  /*this is how you can change the shape of your image frame using clip-path to define coordinate points.
+    starting clockwise from top-left, top-right, bottom-right, bottom-left
+  clip-path: polygon(x y, x y, x y, x y) coordinates are in relation to top left corner left -> right top -> bottom*/
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%); }
+  .header__logo-box {
+    /* set the logo in a box so you can make it stay in the same place within its parent container 
+       set this div to absolute so it stays where you want it within its parent.
+    */
+    position: absolute;
+    top: 4rem;
+    left: 4rem; }
+  .header__logo {
+    height: 3.5rem;
+    /*  3.5rem == 35px  root f-size = 10  */ }
+  .header__text-box {
+    /* the parent div position will make its children "relative" within it
+    the .text-box position is set to absolute so it doesn't change from the position inside its parent */
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    /* the top/left will position the element according to its parent
+    the transform:translate will position the element based on its own shape */
+    transform: translate(-50%, -50%);
+    /* Since this anchor tag is also an inline element we can treat it as text
+    so to center text all we need is text-align: center */
+    text-align: center; }
+  .header__logo:hover {
+    animation: moveInRight 3s ease-out; }
