@@ -20,6 +20,7 @@
   /*this is how you can change the shape of your image frame using clip-path to define coordinate points.
     starting clockwise from top-left, top-right, bottom-right, bottom-left
   clip-path: polygon(x y, x y, x y, x y) coordinates are in relation to top left corner left -> right top -> bottom*/
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
 
   &__logo-box {

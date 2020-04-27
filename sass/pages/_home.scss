@@ -1,5 +1,35 @@
 .section-about {
   background-color: $color-gray-light-1;
   padding: 45rem 0;
-  margin-top: -20vh;
+  margin-top: -40vh;
+}
+
+.section-features {
+  margin-top: -35rem;
+  padding: 20rem 0;
+
+  background-image: linear-gradient(
+      to right bottom,
+      rgba($color-primary-light, 0.748),
+      rgba($color-primary-dark, 0.714)
+    ),
+    url("../img/nat-4.jpg");
+  background-size: cover;
+
+  transform: skewY(-7deg);
+
+  // ADVANCED SELECTORS
+  & > * {
+    transform: skewY(7deg);
+  }
+  // in order to prevent all * direct children > from getting skewed -7deg with the parent use these advanced selectors
+  // ">" will select all direct children of the section-feature container
+  // "*" will select all the direct children of the section-feature container
+  //  this will prevent any future children that get added to this section from getting skewed -7deg.
+}
+
+.section-tours {
+  margin: -10rem;
+  background-color: $color-gray-light-1;
+  padding: 25rem 0 50rem 0;
 }
