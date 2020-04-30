@@ -18,6 +18,9 @@ that goes in the universal selector above
 html {
   font-size: 62.5%;
   /*   SET ROOT FONT-SIZE 
+    // This defines what 1rem is
+    font-size: 62.5%; //1 rem = 10px; 10px/16px = 62.5%
+    
   Setting font-size in html will help you to easily calculate and update all CSS
   properties as your site responds to media queries. With this one html declaration
   you can change all of your CSS for each media query 
@@ -27,7 +30,7 @@ html {
 
 body {
   box-sizing: border-box;
-  color: $color-white;
+  background-color: $color-gray-light-1;
 }
 
 ::selection {
