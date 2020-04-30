@@ -17,6 +17,9 @@
     /* set the position property to relative to get the psuedo element behind the button */
     position: relative;
     font-size: $default-font-size;
+
+    border: none;
+    cursor: pointer;
   }
 
   &:hover {

@@ -1,13 +1,12 @@
-/*********   ANIMATIONS   ***************/
 @-webkit-keyframes moveInLeft {
   0% {
     opacity: 0;
-    -webkit-transform: translateX(-1rem);
-            transform: translateX(-1rem);
+    -webkit-transform: translateX(-10rem);
+            transform: translateX(-10rem);
   }
   80% {
-    -webkit-transform: translateX(2rem);
-            transform: translateX(2rem);
+    -webkit-transform: translateX(1rem);
+            transform: translateX(1rem);
   }
   100% {
     opacity: 1;
@@ -15,15 +14,16 @@
             transform: translate(0);
   }
 }
+
 @keyframes moveInLeft {
   0% {
     opacity: 0;
-    -webkit-transform: translateX(-1rem);
-            transform: translateX(-1rem);
+    -webkit-transform: translateX(-10rem);
+            transform: translateX(-10rem);
   }
   80% {
-    -webkit-transform: translateX(2rem);
-            transform: translateX(2rem);
+    -webkit-transform: translateX(1rem);
+            transform: translateX(1rem);
   }
   100% {
     opacity: 1;
@@ -35,16 +35,12 @@
 @-webkit-keyframes moveInRight {
   0% {
     opacity: 0;
-    -webkit-transform: translateX(1rem) rotate(-50deg);
-            transform: translateX(1rem) rotate(-50deg);
-  }
-  60% {
-    -webkit-transform: rotate(120deg);
-            transform: rotate(120deg);
+    -webkit-transform: translateX(10rem);
+            transform: translateX(10rem);
   }
   80% {
-    -webkit-transform: translateX(-2rem);
-            transform: translateX(-2rem);
+    -webkit-transform: translateX(-1rem);
+            transform: translateX(-1rem);
   }
   100% {
     opacity: 1;
@@ -56,16 +52,12 @@
 @keyframes moveInRight {
   0% {
     opacity: 0;
-    -webkit-transform: translateX(1rem) rotate(-50deg);
-            transform: translateX(1rem) rotate(-50deg);
-  }
-  60% {
-    -webkit-transform: rotate(120deg);
-            transform: rotate(120deg);
+    -webkit-transform: translateX(10rem);
+            transform: translateX(10rem);
   }
   80% {
-    -webkit-transform: translateX(-2rem);
-            transform: translateX(-2rem);
+    -webkit-transform: translateX(-1rem);
+            transform: translateX(-1rem);
   }
   100% {
     opacity: 1;
@@ -74,7 +66,7 @@
   }
 }
 
-@-webkit-keyframes moveInButton {
+@-webkit-keyframes moveInBottom {
   0% {
     opacity: 0;
     -webkit-transform: translateY(3rem);
@@ -82,12 +74,12 @@
   }
   100% {
     opacity: 1;
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
+    -webkit-transform: translate(0);
+            transform: translate(0);
   }
 }
 
-@keyframes moveInButton {
+@keyframes moveInBottom {
   0% {
     opacity: 0;
     -webkit-transform: translateY(3rem);
@@ -95,8 +87,8 @@
   }
   100% {
     opacity: 1;
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
+    -webkit-transform: translate(0);
+            transform: translate(0);
   }
 }
 
@@ -128,6 +120,17 @@ html {
 body {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  color: #dad1d1;
+}
+
+::-moz-selection {
+  background-color: #55c57a;
+  color: #dad1d1;
+}
+
+::selection {
+  background-color: #55c57a;
+  color: #dad1d1;
 }
 
 body {
@@ -144,7 +147,7 @@ body {
 }
 
 .heading-primary {
-  color: #e9e3e3;
+  color: #dad1d1;
   text-transform: uppercase;
   /*when you animate something you hide the back part so you don't see the shaking and smooths things out*/
   -webkit-backface-visibility: hidden;
@@ -236,6 +239,10 @@ body {
   margin-bottom: 1.5rem;
 }
 
+.u-margin-top-big {
+  margin-top: 8rem;
+}
+
 .btn {
   /* styling with psuedo elements */
 }
@@ -256,6 +263,8 @@ body {
   /* set the position property to relative to get the psuedo element behind the button */
   position: relative;
   font-size: 1.6rem;
+  border: none;
+  cursor: pointer;
 }
 
 .btn:hover {
@@ -281,7 +290,7 @@ body {
 }
 
 .btn--white {
-  background-color: #e9e3e3;
+  background-color: #dad1d1;
   color: #777;
 }
 
@@ -302,7 +311,7 @@ body {
 }
 
 .btn--white::after {
-  background-color: #e9e3e3;
+  background-color: #dad1d1;
 }
 
 .btn--animated {
@@ -327,7 +336,7 @@ body {
 
 .btn-text:hover {
   background-color: #55c57a;
-  color: #e9e3e3;
+  color: #dad1d1;
   -webkit-box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
           box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
   -webkit-transform: translateY(-2px);
@@ -387,7 +396,7 @@ body {
 }
 
 .feature-box {
-  background-color: rgba(233, 227, 227, 0.8);
+  background-color: rgba(218, 209, 209, 0.8);
   font-size: 1.5rem;
   padding: 2.5rem;
   text-align: center;
@@ -453,6 +462,16 @@ body {
   background-image: linear-gradient(to right bottom, #ffb900, #ff7730);
 }
 
+.card__side--back-2 {
+  background-image: -webkit-gradient(linear, left top, right bottom, from(#7ed56f), to(#28b485));
+  background-image: linear-gradient(to right bottom, #7ed56f, #28b485);
+}
+
+.card__side--back-3 {
+  background-image: -webkit-gradient(linear, left top, right bottom, from(#2998ff), to(#5643fa));
+  background-image: linear-gradient(to right bottom, #2998ff, #5643fa);
+}
+
 .card:hover .card__side--front {
   -webkit-transform: rotateY(-180deg);
           transform: rotateY(-180deg);
@@ -477,11 +496,13 @@ body {
 }
 
 .card__picture--2 {
-  background-image: url(/img/nat-5.jpg);
+  background-image: -webkit-gradient(linear, left top, right bottom, from(#28b485), to(#7ed56f)), url(/img/nat-6.jpg);
+  background-image: linear-gradient(to right bottom, #28b485, #7ed56f), url(/img/nat-6.jpg);
 }
 
 .card__picture--3 {
-  background-image: url(/img/nat-5.jpg);
+  background-image: -webkit-gradient(linear, left top, right bottom, from(#5643fa), to(#2998ff)), url(/img/nat-7.jpg);
+  background-image: linear-gradient(to right bottom, #5643fa, #2998ff), url(/img/nat-7.jpg);
 }
 
 .card__heading {
@@ -489,7 +510,7 @@ body {
   font-weight: 300;
   text-transform: uppercase;
   text-align: right;
-  color: #e9e3e3;
+  color: #dad1d1;
   position: absolute;
   top: 12rem;
   right: 2rem;
@@ -544,15 +565,18 @@ body {
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   width: 90%;
+  text-align: center;
 }
 
 .card__price-box {
   text-align: center;
-  color: #e9e3e3;
+  color: #dad1d1;
+  margin-bottom: 8rem;
 }
 
 .card__price-only {
   font-size: 1.4rem;
+  text-transform: uppercase;
 }
 
 .card__price-value {
